@@ -11,15 +11,33 @@ const ConfirmBookingItem = (props) => {
       <CardContent style={{ paddingTop: "7px", paddingBottom: "7px" }}>
         <NavLink to="/" style={{ textDecoration: "none" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
+            {/* Pickup Location */}
             <div>
-              <Typography color="text.secondary" style={{ fontSize: "18px" }}>
-                Narendrapur
-              </Typography>
-              <hr style={{ color: "floralwhite" }}></hr>
-              <Typography color="text.secondary" style={{ fontSize: "18px" }}>
-                Eco Space
-              </Typography>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <i
+                  className="fa-solid fa-map-pin"
+                  style={{ fontSize: 15, color: "#546e7a", marginRight: "7px" }}
+                />
+                <Typography color="text.secondary" style={{ fontSize: "20px" }}>
+                  Narendrapur
+                </Typography>
+              </div>
 
+              {/* Breakline */}
+              <hr style={{ color: "floralwhite" }}></hr>
+
+              {/* Drop Location */}
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <i
+                  className="fa-solid fa-map"
+                  style={{ fontSize: 11, color: "#546e7a", marginRight: "7px" }}
+                />
+                <Typography color="text.secondary" style={{ fontSize: "20px" }}>
+                  Eco Space
+                </Typography>
+              </div>
+
+              {/* Booking & Available */}
               <div style={{ display: "flex" }}>
                 <div style={{ marginRight: "25px" }}>
                   <Typography
@@ -52,7 +70,10 @@ const ConfirmBookingItem = (props) => {
               </div>
             </div>
 
+            {/* Verticle Line */}
             <div style={{ borderLeft: "1px solid #566573" }}></div>
+
+            {/* Side Info */}
             <div>
               <Typography color="text.secondary">
                 <span style={{ fontSize: "30px" }}>29.7 </span>
@@ -63,31 +84,44 @@ const ConfirmBookingItem = (props) => {
             </div>
           </div>
 
-          <Typography
-            color="text.secondary"
+          {/* Bottom Section */}
+          <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              fontSize: 14,
-              marginTop: "15px",
+              marginTop: "14px",
             }}
           >
-            <span>Vehicle</span>
-            <span>Hexa Partner</span>
-            <span>Helpline</span>
-          </Typography>
-          <Typography
-            color="text.secondary"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              fontSize: 12,
-            }}
-          >
-            <span>Weginer</span>
-            <span>Abhijeet Shaw</span>
-            <span>99036222224</span>
-          </Typography>
+            {/* Vehicle */}
+            <div>
+              <Typography color="text.secondary" style={{ fontSize: "14px" }}>
+                Vehicle
+              </Typography>
+              <Typography color="text.secondary" style={{ fontSize: "12px" }}>
+                Weginer
+              </Typography>
+            </div>
+            {/* Hexa Partner */}
+            <div>
+              <Typography color="text.secondary" style={{ fontSize: "14px" }}>
+                Hexa Partner
+              </Typography>
+              <Typography color="text.secondary" style={{ fontSize: "12px" }}>
+                Abhijeet Shaw
+              </Typography>
+            </div>
+            {/* Helpline */}
+            <div>
+              <Typography color="text.secondary" style={{ fontSize: "14px" }}>
+                Helpline
+              </Typography>
+              <Typography color="text.secondary" style={{ fontSize: "12px" }}>
+                990362224
+              </Typography>
+            </div>
+          </div>
+
+          {/* AC | Non AC */}
           <Typography
             color="text.secondary"
             style={{
@@ -97,18 +131,20 @@ const ConfirmBookingItem = (props) => {
             <span>(AC)</span>
           </Typography>
 
+          {/* Base Fair & Convenience Fee */}
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div>
+              {/* Base Fair */}
               <Typography
                 color="text.secondary"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   fontSize: 12,
-                  marginTop: "10px",
+                  marginTop: "8px",
                 }}
               >
-                <span style={{ marginRight: "8px" }}>Base Fair</span>
+                <span style={{ marginRight: "6px" }}>Base Fair</span>
                 <CurrencyRupeeIcon
                   style={{
                     fontSize: 12,
@@ -117,6 +153,7 @@ const ConfirmBookingItem = (props) => {
                 <span>76</span>
               </Typography>
 
+              {/* Convenience Fee */}
               <Typography
                 color="text.secondary"
                 style={{
@@ -125,7 +162,7 @@ const ConfirmBookingItem = (props) => {
                   fontSize: 12,
                 }}
               >
-                <span style={{ marginRight: "8px" }}>Convenience fee</span>
+                <span style={{ marginRight: "6px" }}>Convenience fee</span>
                 <CurrencyRupeeIcon
                   style={{
                     fontSize: 12,
@@ -135,6 +172,7 @@ const ConfirmBookingItem = (props) => {
               </Typography>
             </div>
 
+            {/* Side Total Price */}
             <Typography color="text.secondary">
               <CurrencyRupeeIcon
                 style={{

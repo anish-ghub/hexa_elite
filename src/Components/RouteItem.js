@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CardActions from "@mui/material/CardActions";
 import CurrencyRupeeOutlinedIcon from "@mui/icons-material/CurrencyRupeeOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { NavLink } from "react-router-dom";
 
 const bull = (
@@ -24,6 +23,10 @@ const bull = (
 );
 
 const RouteItem = (props) => {
+  const topHandler = () => {
+    console.log("Top Handler Called...");
+  };
+
   return (
     <Card sx={{ minWidth: 275, margin: "10px" }}>
       <CardContent
@@ -37,7 +40,7 @@ const RouteItem = (props) => {
           <div>
             {/* Main Route */}
             <Typography
-              sx={{ fontSize: 16 }}
+              sx={{ fontSize: 18 }}
               color="text.secondary"
               gutterBottom
             >
@@ -47,11 +50,13 @@ const RouteItem = (props) => {
             </Typography>
 
             {/* Route Information */}
-            <Typography sx={{ fontSize: 10, mb: 1.5 }} color="text.secondary">
-              {props.info}{" "}
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <Typography sx={{ fontSize: 11 }} color="text.secondary">
+                {props.info}
+              </Typography>
               <CurrencyRupeeOutlinedIcon
                 style={{
-                  fontSize: "9px",
+                  fontSize: 11,
                   borderRadius: "50%",
                   color: "white",
                   backgroundColor: "#2196f3",
@@ -59,14 +64,14 @@ const RouteItem = (props) => {
                   marginLeft: "5px",
                 }}
               />
-            </Typography>
+            </div>
           </div>
         </NavLink>
 
         {/* Favourite Icon */}
-        <CardActions style={{}}>
+        <CardActions onClick={topHandler}>
           <IconButton aria-label="add to favorites">
-            <FavoriteBorderOutlinedIcon style={{ color: "#880e4f" }} />
+            <i className="fa-regular fa-heart" style={{ color: "#546e7a" }} />
           </IconButton>
         </CardActions>
       </CardContent>
