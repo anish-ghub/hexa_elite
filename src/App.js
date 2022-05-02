@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import RoutesList from "./Pages/RoutesList";
+import PickDrop from "./Pages/PickDrop";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import ConfirmBooking from "./Pages/ConfirmBooking";
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Bahnschrift"].join(","),
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="/" element={<RoutesList />} />
+          <Route path="/path" element={<PickDrop />} />
+          <Route path="/booking" element={<ConfirmBooking />} />
+        </Routes>
+      </ThemeProvider>
+    </LocalizationProvider>
   );
 }
 
