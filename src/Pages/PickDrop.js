@@ -7,6 +7,7 @@ import CarItem from "../Components/CarItem";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileTimePicker } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import TopNav from "../Components/TopNav";
 
 export default function PickDrop() {
   const DUMMY_CAR_LIST = [
@@ -67,64 +68,67 @@ export default function PickDrop() {
   );
 
   return (
-    <Stack spacing={2} sx={{ margin: "15px" }}>
-      {/* Pickup  */}
-      <Autocomplete
-        id="pickup_location"
-        freeSolo
-        options={DUMMY_Pick_Drop.map((option) => option.title)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Pickup Location"
-            value={pickup}
-            onChange={pickupHandler}
-          />
-        )}
-      />
-      {/* Drop */}
-      <Autocomplete
-        freeSolo
-        id="drop_location"
-        // disableClearable
-        options={DUMMY_Pick_Drop.map((option) => option.title)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Drop Location"
-            // Inputpara={{
-            //   ...params.Inputpara,
-            //   type: "search",
-            // }}
-          />
-        )}
-      />
-
-      {DUMMY_CAR_LIST.map((para, index) => (
-        <CarItem
-          key={index}
-          car_name={para.car_name}
-          week_day={para.week_day}
-          arrival_time={para.arrival_time}
-          arrival_m={para.arrival_m}
-          seat_available={para.seat_available}
-          reach_time={para.reach_time}
-          reach_m={para.reach_m}
+    <div>
+      <TopNav title="Choose Stop" />
+      <Stack spacing={2} sx={{ margin: "15px" }}>
+        {/* Pickup  */}
+        <Autocomplete
+          id="pickup_location"
+          freeSolo
+          options={DUMMY_Pick_Drop.map((option) => option.title)}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Pickup Location"
+              value={pickup}
+              onChange={pickupHandler}
+            />
+          )}
         />
-      ))}
-
-      {/* Time Selector */}
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <MobileTimePicker
-          label="Suggest Time"
-          value={selectedTime}
-          onChange={(newValue) => {
-            setSelectedTime(newValue);
-          }}
-          renderInput={(params) => <TextField {...params} />}
+        {/* Drop */}
+        <Autocomplete
+          freeSolo
+          id="drop_location"
+          // disableClearable
+          options={DUMMY_Pick_Drop.map((option) => option.title)}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Drop Location"
+              // Inputpara={{
+              //   ...params.Inputpara,
+              //   type: "search",
+              // }}
+            />
+          )}
         />
-      </LocalizationProvider>
-    </Stack>
+
+        {DUMMY_CAR_LIST.map((para, index) => (
+          <CarItem
+            key={index}
+            car_name={para.car_name}
+            week_day={para.week_day}
+            arrival_time={para.arrival_time}
+            arrival_m={para.arrival_m}
+            seat_available={para.seat_available}
+            reach_time={para.reach_time}
+            reach_m={para.reach_m}
+          />
+        ))}
+
+        {/* Time Selector */}
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <MobileTimePicker
+            label="Suggest Time"
+            value={selectedTime}
+            onChange={(newValue) => {
+              setSelectedTime(newValue);
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+      </Stack>
+    </div>
   );
 }
 

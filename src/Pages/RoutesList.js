@@ -1,10 +1,12 @@
 import * as React from "react";
 // import Button from "@mui/material/Button";
 import AllRoutes from "../Components/AllRoutes";
+import TopNav from "../Components/TopNav";
 
 const RoutesList = () => {
   return (
     <div>
+      <TopNav title="Hexa Elite" />
       {/* Complete Routes Lists */}
       <AllRoutes />
 
