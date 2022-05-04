@@ -35,7 +35,7 @@ export default function TopNav(props) {
               <NavLink to="/">
                 <i
                   className="fa-solid fa-arrow-left"
-                  style={{ marginRight: "10px", color: "white" }}
+                  style={{ marginRight: "15px", color: "white" }}
                 />
               </NavLink>
             )}
@@ -43,7 +43,7 @@ export default function TopNav(props) {
               <NavLink to="/path">
                 <i
                   className="fa-solid fa-arrow-left"
-                  style={{ marginRight: "8px", color: "white" }}
+                  style={{ marginRight: "15px", color: "white" }}
                 />
               </NavLink>
             )}

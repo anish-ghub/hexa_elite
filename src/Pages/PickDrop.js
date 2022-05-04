@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useState } from "react";
+import TopNav from "../Components/TopNav";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
 import CarItem from "../Components/CarItem";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { MobileTimePicker } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import TopNav from "../Components/TopNav";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { MobileTimePicker } from "@mui/x-date-pickers";
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 export default function PickDrop() {
   const DUMMY_CAR_LIST = [
@@ -63,9 +63,9 @@ export default function PickDrop() {
     setPickup(event.target.value);
   };
 
-  const [selectedTime, setSelectedTime] = useState(
-    new Date("2018-01-01T00:00:00.000Z")
-  );
+  // const [selectedTime, setSelectedTime] = useState(
+  //   new Date("2018-01-01T00:00:00.000Z")
+  // );
 
   return (
     <div>
@@ -117,7 +117,7 @@ export default function PickDrop() {
         ))}
 
         {/* Time Selector */}
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
+        {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
           <MobileTimePicker
             label="Suggest Time"
             value={selectedTime}
@@ -126,7 +126,7 @@ export default function PickDrop() {
             }}
             renderInput={(params) => <TextField {...params} />}
           />
-        </LocalizationProvider>
+        </LocalizationProvider> */}
       </Stack>
     </div>
   );
